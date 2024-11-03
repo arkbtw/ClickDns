@@ -1,0 +1,2 @@
+iphlpapi.*
+DNS_INTERFACE_SETTINGS3

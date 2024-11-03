@@ -1,0 +1,45 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="800"
+        d:DesignHeight="450"
+        x:Class="dnsset.MainWindow"
+        Height="200"
+        Width="300"
+        MinWidth="100"
+        MinHeight="100"
+        Title="Setdns">
+    <StackPanel Margin="6"
+                Spacing="12">
+        <StackPanel>
+            <Label Content="Select DNS resolver"
+                   Margin="0,0,0,4" />
+            <ComboBox HorizontalAlignment="Stretch"
+                      Name="Presets"
+                      SelectionChanged="OnSelectionChanged" />
+            <CheckBox Content="Enable Encryption"
+                      Name="CheckBox_EnableEnc" />
+        </StackPanel>
+        <StackPanel>
+            <Button HorizontalAlignment="Center"
+                    Name="CButton"
+                    Click="ConfigClick">                
+                Configure Resolvers
+            </Button>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Spacing="10"
+                        IsVisible="{Binding !#CButton.IsVisible}">
+                <ToggleButton Width="100"
+                              HorizontalContentAlignment="Center"
+                              IsChecked="true"
+                              Click="SaveButton_Click">Apply</ToggleButton>
+                <Button Width="100"
+                        HorizontalContentAlignment="Center"
+                        Click="CancelButton_Click">Cancel</Button>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

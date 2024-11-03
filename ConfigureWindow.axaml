@@ -1,0 +1,91 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dnsset"
+        mc:Ignorable="d"
+        Width="680"
+        Height="480"
+        x:Class="dnsset.ConfigureWindow"
+        Title="Configure DNS Resolvers">
+    <Grid ColumnDefinitions="1*,1*"
+          RowDefinitions="Auto,Auto,Auto,Auto"
+          Margin="10">
+        <StackPanel Grid.Row="0"
+                    Grid.ColumnSpan="2">
+            <Label>Select Adapter</Label>
+            <ComboBox HorizontalAlignment="Stretch"
+                      Name="Adapters"
+                      SelectionChanged="ComboBox_SelectionChanged" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="1"
+                    Grid.Column="0">
+            <Label VerticalAlignment="Center"
+                   Margin="0,0,6,0">
+                <TextBlock FontSize="18"
+                           FontWeight="Bold">IPv4</TextBlock>
+            </Label>
+            <ToggleSwitch Name="Ip4Switch" />
+        </StackPanel>
+        <StackPanel Grid.Row="2"
+                    Grid.Column="0"
+                    Margin="0,0,20,0"
+                    Spacing="10"
+                    IsEnabled="{Binding ElementName=Ip4Switch, Path=IsChecked}"
+                    Name="Ip4Items">
+            <local:IpControl Text="Primary Address"
+                             EnableDoh="false"
+                             IpAddress=""
+                             DohUrl=""
+                             Name="Ip4Primary" />
+            <local:IpControl Text="Secondary Address"
+                             EnableDoh="false"
+                             IpAddress=""
+                             DohUrl=""
+                             Name="Ip4Secondary" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="1"
+                    Grid.Column="1">
+            <Label VerticalAlignment="Center"
+                   Margin="0,0,6,0">
+                <TextBlock FontSize="18"
+                           FontWeight="Bold">IPv6</TextBlock>
+            </Label>
+            <ToggleSwitch Name="Ip6Switch" />
+        </StackPanel>
+        <StackPanel Grid.Row="2"
+                    Grid.Column="1"
+                    IsEnabled="{Binding ElementName=Ip6Switch, Path=IsChecked}"
+                    Name="Ip6Items"
+                    Spacing="10">
+            <local:IpControl Text="Primary Address"
+                             EnableDoh="false"
+                             IpAddress=""
+                             DohUrl=""
+                             Name="Ip6Primary"
+                             IsIpv6="true" />
+            <local:IpControl Text="Secondary Address"
+                             EnableDoh="false"
+                             IpAddress=""
+                             DohUrl=""
+                             Name="Ip6Secondary"
+                             IsIpv6="true" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="3"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center"
+                    Spacing="10"
+                    Margin="0,20,20,0">
+            <ToggleButton Width="100"
+                          HorizontalContentAlignment="Center"
+                          IsChecked="true"
+                          Click="SaveButton_Click">Apply</ToggleButton>
+            <Button Width="100"
+                    HorizontalContentAlignment="Center"
+                    Click="CancelButton_Click">Cancel</Button>
+        </StackPanel>
+    </Grid>
+</Window>
