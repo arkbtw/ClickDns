@@ -10,7 +10,7 @@
         Width="300"
         MinWidth="100"
         MinHeight="100"
-        Title="Setdns">
+        Title="ClickDns">
     <StackPanel Margin="6"
                 Spacing="12">
         <StackPanel>
