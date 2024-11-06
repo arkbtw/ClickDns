@@ -2,6 +2,7 @@
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <AssemblyName>ClickDns</AssemblyName>
+        <Version>1.0.1</Version>
         <TargetFramework>net8.0-windows</TargetFramework>
         <RuntimeIdentifier>win-x64</RuntimeIdentifier>
         <Nullable>enable</Nullable>
