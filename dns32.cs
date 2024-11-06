@@ -232,10 +232,10 @@ public static class Dnsutil
                 new IPInfo(IPAddress.Parse("2606:4700:4700::1001"),"https://cloudflare-dns.com/dns-query"),
             ],
         "Google" => [
-            new IPInfo(new IPAddress([8,8,8,8]),"https://dns.google/query"),
-                new IPInfo(new IPAddress([8,8,4,4]),"https://dns.google/query"),
-                new IPInfo(IPAddress.Parse("2001:4860:4860::8888"),"https://dns.google/query"),
-                new IPInfo(IPAddress.Parse("2001:4860:4860::8844"),"https://dns.google/query"),
+            new IPInfo(new IPAddress([8,8,8,8]),"https://dns.google/dns-query"),
+                new IPInfo(new IPAddress([8,8,4,4]),"https://dns.google/dns-query"),
+                new IPInfo(IPAddress.Parse("2001:4860:4860::8888"),"https://dns.google/dns-query"),
+                new IPInfo(IPAddress.Parse("2001:4860:4860::8844"),"https://dns.google/dns-query"),
             ],
         "Quad9" => [
             new IPInfo(new IPAddress([9,9,9,9]),"https://dns.quad9.net/dns-query"),
